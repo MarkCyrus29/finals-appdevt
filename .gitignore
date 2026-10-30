@@ -1,0 +1,18 @@
+
+################################################################################
+# Added by UiPath Studio
+# Prevent caching and local artifacts from being committed
+################################################################################
+.local
+.objects/
+.screenshots/
+.settings/
+*.nupkg
+################################################################################
+# End of UiPath Studio common ignores
+################################################################################
+
+.local-chromium/
+.local/
+.screenshots/
+*.nupkg

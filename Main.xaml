@@ -1,0 +1,1510 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="TailoringInvoice" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umae="clr-namespace:UiPath.Mail.Activities.Enums;assembly=UiPath.Mail.Activities" xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.Mail.Activities" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:upapn="clr-namespace:UiPath.PDF.Activities.PDF.NetCore;assembly=UiPath.PDF.Activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.PDF.Activities.PDF</x:String>
+      <x:String>UiPath.PDF.Activities</x:String>
+      <x:String>UiPath.PDF</x:String>
+      <x:String>UiPath.Studio.Forms.Runtime</x:String>
+      <x:String>UiPath.Forms.Activities</x:String>
+      <x:String>UiPath.Forms.Activities.Base</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>UiPath.PDF</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Forms.Runtime</AssemblyReference>
+      <AssemblyReference>UiPath.Forms.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="709.2,29383.200000000004" sap2010:WorkflowViewState.IdRef="Sequence_21">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="OrderType" />
+      <Variable x:TypeArguments="x:String" Name="ClientName" />
+      <Variable x:TypeArguments="x:String" Name="ClientEmail" />
+      <Variable x:TypeArguments="x:String" Name="Fabric" />
+      <Variable x:TypeArguments="x:String" Name="Garment" />
+      <Variable x:TypeArguments="x:String" Name="Service" />
+      <Variable x:TypeArguments="x:String" Name="Garment1" />
+      <Variable x:TypeArguments="x:String" Name="Fabric1" />
+      <Variable x:TypeArguments="x:Double" Name="Yards1" />
+      <Variable x:TypeArguments="x:Int32" Name="Pieces1" />
+      <Variable x:TypeArguments="x:String" Name="Service1" />
+      <Variable x:TypeArguments="x:Int32" Name="ServiceQty1" />
+      <Variable x:TypeArguments="x:String" Name="Garment2" />
+      <Variable x:TypeArguments="x:String" Name="Fabric2" />
+      <Variable x:TypeArguments="x:Double" Name="Yards2" />
+      <Variable x:TypeArguments="x:Int32" Name="Pieces2" />
+      <Variable x:TypeArguments="x:String" Name="Service2" />
+      <Variable x:TypeArguments="x:Int32" Name="ServiceQty2" />
+      <Variable x:TypeArguments="x:String" Name="Garment3" />
+      <Variable x:TypeArguments="x:String" Name="Fabric3" />
+      <Variable x:TypeArguments="x:Double" Name="Yards3" />
+      <Variable x:TypeArguments="x:Int32" Name="Pieces3" />
+      <Variable x:TypeArguments="x:String" Name="Service3" />
+      <Variable x:TypeArguments="x:Int32" Name="ServiceQty3" />
+      <Variable x:TypeArguments="x:String" Name="Garment4" />
+      <Variable x:TypeArguments="x:String" Name="Fabric4" />
+      <Variable x:TypeArguments="x:Double" Name="Yards4" />
+      <Variable x:TypeArguments="x:Int32" Name="Pieces4" />
+      <Variable x:TypeArguments="x:String" Name="Service4" />
+      <Variable x:TypeArguments="x:Int32" Name="ServiceQty4" />
+      <Variable x:TypeArguments="x:String" Name="SizeName" />
+      <Variable x:TypeArguments="x:String" Name="InvoiceNo" />
+      <Variable x:TypeArguments="x:String" Name="InvoiceDate" />
+      <Variable x:TypeArguments="x:String" Name="DueDate" />
+      <Variable x:TypeArguments="x:String" Name="LineRowsHtml" />
+      <Variable x:TypeArguments="x:String" Name="InvoiceHtml" />
+      <Variable x:TypeArguments="x:String" Name="InvoiceFolder" />
+      <Variable x:TypeArguments="x:String" Name="PdfFileName" />
+      <Variable x:TypeArguments="x:String" Name="PdfPath" />
+      <Variable x:TypeArguments="x:String" Name="MailBody" />
+      <Variable x:TypeArguments="x:String" Name="Status" />
+      <Variable x:TypeArguments="x:String" Name="Remarks" />
+      <Variable x:TypeArguments="x:String" Name="GCashNumber" />
+      <Variable x:TypeArguments="x:String" Name="GCashName" />
+      <Variable x:TypeArguments="x:String" Default="Yes" Name="AnotherInvoice" />
+      <Variable x:TypeArguments="x:String" Default="xrmevemgxaywholl" Name="EmailPassword" />
+      <Variable x:TypeArguments="x:Double" Name="Yards" />
+      <Variable x:TypeArguments="x:Double" Name="PricePerYard" />
+      <Variable x:TypeArguments="x:Double" Name="FabricCost" />
+      <Variable x:TypeArguments="x:Double" Name="LaborFee" />
+      <Variable x:TypeArguments="x:Double" Name="UnitPrice" />
+      <Variable x:TypeArguments="x:Double" Name="LineTotal" />
+      <Variable x:TypeArguments="x:Double" Name="TotalAmount" />
+      <Variable x:TypeArguments="x:Int32" Name="Quantity" />
+      <Variable x:TypeArguments="x:Int32" Name="ServiceQty" />
+      <Variable x:TypeArguments="x:Int32" Name="TotalPieces" />
+      <Variable x:TypeArguments="x:Int32" Name="NextNumber" />
+      <Variable x:TypeArguments="x:Int32" Name="DueDays" />
+      <Variable x:TypeArguments="x:Int32" Name="Attempts" />
+      <Variable x:TypeArguments="x:Int32" Name="Boys_XS" />
+      <Variable x:TypeArguments="x:Int32" Name="Boys_S" />
+      <Variable x:TypeArguments="x:Int32" Name="Boys_M" />
+      <Variable x:TypeArguments="x:Int32" Name="Boys_L" />
+      <Variable x:TypeArguments="x:Int32" Name="Boys_XL" />
+      <Variable x:TypeArguments="x:Int32" Name="Boys_XXL" />
+      <Variable x:TypeArguments="x:Int32" Name="Boys_3XL" />
+      <Variable x:TypeArguments="x:Int32" Name="Girls_XS" />
+      <Variable x:TypeArguments="x:Int32" Name="Girls_S" />
+      <Variable x:TypeArguments="x:Int32" Name="Girls_M" />
+      <Variable x:TypeArguments="x:Int32" Name="Girls_L" />
+      <Variable x:TypeArguments="x:Int32" Name="Girls_XL" />
+      <Variable x:TypeArguments="x:Int32" Name="Girls_XXL" />
+      <Variable x:TypeArguments="x:Int32" Name="Girls_3XL" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Int32)" Name="BoysQty" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Int32)" Name="GirlsQty" />
+      <Variable x:TypeArguments="x:Boolean" Name="Sent" />
+      <Variable x:TypeArguments="sd:DataTable" Name="FabricTable" />
+      <Variable x:TypeArguments="sd:DataTable" Name="GarmentTable" />
+      <Variable x:TypeArguments="sd:DataTable" Name="SizeTable" />
+      <Variable x:TypeArguments="sd:DataTable" Name="ServiceTable" />
+      <Variable x:TypeArguments="sd:DataTable" Name="SettingsTable" />
+      <Variable x:TypeArguments="sd:DataTable" Name="LogTable" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="664,29360" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="662.4,28964.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="628.8,1084" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_3">
+            <ueab:ExcelProcessScopeX.Body>
+              <ActivityAction x:TypeArguments="ui:IExcelProcess">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484.8,1005.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="451.2,945.6" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" ResizeWindow="None" WorkbookPath="MarshallsTailoring.xlsx">
+                    <ueab:ExcelApplicationCard.Body>
+                      <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="449.6,726.4" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="416,168.8" sap2010:WorkflowViewState.IdRef="ReadRangeX_2" Range="[Excel.Sheet(&quot;Fabrics&quot;)]" SaveTo="[FabricTable]" />
+                          <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="416,168.8" sap2010:WorkflowViewState.IdRef="ReadRangeX_3" Range="[Excel.Sheet(&quot;Garments&quot;)]" SaveTo="[GarmentTable]" />
+                          <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="416,168.8" sap2010:WorkflowViewState.IdRef="ReadRangeX_4" Range="[Excel.Sheet(&quot;Sizes&quot;)]" SaveTo="[SizeTable]" />
+                          <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="416,160" sap2010:WorkflowViewState.IdRef="ReadRangeX_5" Range="[Excel.Sheet(&quot;Alterations&quot;)]" SaveTo="[ServiceTable]" />
+                        </Sequence>
+                      </ActivityAction>
+                    </ueab:ExcelApplicationCard.Body>
+                  </ueab:ExcelApplicationCard>
+                </Sequence>
+              </ActivityAction>
+            </ueab:ExcelProcessScopeX.Body>
+          </ueab:ExcelProcessScopeX>
+          <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[AnotherInvoice = &quot;Yes&quot;]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="628.8,27820.8" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
+            <ui:InterruptibleDoWhile.Body>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="627.2,27699.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_39">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[OrderType]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_40">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[ClientName]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_41">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[ClientEmail]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_42">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Fabric]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_43">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Garment]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_44">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Service]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_45">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Double">[Yards]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Double">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_46">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[ServiceQty]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_47">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[Boys_XS]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_48">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[Boys_S]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_49">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[Boys_M]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_50">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[Boys_L]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_51">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[Boys_XL]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_52">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[Boys_XXL]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_53">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[Boys_3XL]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_54">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[Girls_XS]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_55">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[Girls_S]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_56">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[Girls_M]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_57">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[Girls_L]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_58">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[Girls_XL]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_59">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[Girls_XXL]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_60">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[Girls_3XL]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_61">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[LineRowsHtml]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_62">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[PdfFileName]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_63">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Double">[TotalAmount]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Double">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_64">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[TotalPieces]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_65">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Status]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">["Failed"]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_66">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Remarks]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="593.6,577.6" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+                  <ueab:ExcelProcessScopeX.Body>
+                    <ActivityAction x:TypeArguments="ui:IExcelProcess">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484.8,499.2" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="451.2,439.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="MarshallsTailoring.xlsx">
+                          <ueab:ExcelApplicationCard.Body>
+                            <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="449.6,220" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="416,160" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;Settings&quot;)]" SaveTo="[SettingsTable]" />
+                              </Sequence>
+                            </ActivityAction>
+                          </ueab:ExcelApplicationCard.Body>
+                        </ueab:ExcelApplicationCard>
+                      </Sequence>
+                    </ActivityAction>
+                  </ueab:ExcelProcessScopeX.Body>
+                </ueab:ExcelProcessScopeX>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_67">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[NextNumber]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[CInt(SettingsTable.Rows(0)("Value"))]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_68">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[DueDays]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[CInt(SettingsTable.Rows(1)("Value"))]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_69">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[GCashNumber]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[SettingsTable.Rows(2)("Value").ToString]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_70">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[GCashName]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[SettingsTable.Rows(3)("Value").ToString]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_71">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[InvoiceNo]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">["INV-" &amp; Now.Year.ToString &amp; "-" &amp; NextNumber.ToString("000")]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_74">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Garment1]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_75">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Fabric1]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_76">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Double">[Yards1]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Double">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_77">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[Pieces1]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_78">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Service1]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_79">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[ServiceQty1]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_80">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Garment2]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_81">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Fabric2]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_82">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Double">[Yards2]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Double">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_83">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[Pieces2]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_84">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Service2]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_85">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[ServiceQty2]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_86">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Garment3]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_87">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Fabric3]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_88">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Double">[Yards3]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Double">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_89">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[Pieces3]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_90">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Service3]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_91">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[ServiceQty3]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_92">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Garment4]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_93">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Fabric4]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_94">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Double">[Yards4]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Double">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_95">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[Pieces4]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_96">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Service4]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_97">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[ServiceQty4]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="593.6,13280.8" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                  <TryCatch.Try>
+                    <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="592,12650.4" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ufa:ShowFormActivity InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="798c4725-83e5-4cb9-8062-8fed14d1cd4a" Height="[780]" sap:VirtualizedContainerService.HintSize="558.4,219.2" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" IsAsync="False" Width="[900]">
+                        <ufa:ShowFormActivity.Arguments>
+                          <OutArgument x:TypeArguments="x:String" x:Key="OrderType">[OrderType]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="ClientName">[ClientName]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="ClientEmail">[ClientEmail]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="Garment1">[Garment1]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="Fabric1">[Fabric1]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Double" x:Key="Yards1">[Yards1]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="Pieces1">[Pieces1]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="Service1">[Service1]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="ServiceQty1">[ServiceQty1]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="Garment2">[Garment2]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="Fabric2">[Fabric2]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Double" x:Key="Yards2">[Yards2]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="Pieces2">[Pieces2]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="Service2">[Service2]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="ServiceQty2">[ServiceQty2]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="Garment3">[Garment3]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="Fabric3">[Fabric3]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Double" x:Key="Yards3">[Yards3]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="Pieces3">[Pieces3]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="Service3">[Service3]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="ServiceQty3">[ServiceQty3]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="Garment4">[Garment4]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="Fabric4">[Fabric4]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Double" x:Key="Yards4">[Yards4]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="Pieces4">[Pieces4]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="Service4">[Service4]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="ServiceQty4">[ServiceQty4]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="Boys_XS">[Boys_XS]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="Boys_S">[Boys_S]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="Boys_M">[Boys_M]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="Boys_L">[Boys_L]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="Boys_XL">[Boys_XL]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="Boys_XXL">[Boys_XXL]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="Boys_3XL">[Boys_3XL]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="Girls_XS">[Girls_XS]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="Girls_S">[Girls_S]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="Girls_M">[Girls_M]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="Girls_L">[Girls_L]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="Girls_XL">[Girls_XL]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="Girls_XXL">[Girls_XXL]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="Girls_3XL">[Girls_3XL]</OutArgument>
+                        </ufa:ShowFormActivity.Arguments>
+                      </ufa:ShowFormActivity>
+                      <If Condition="[String.IsNullOrWhiteSpace(OrderType) OrElse String.IsNullOrWhiteSpace(ClientName)]" DisplayName="If" sap:VirtualizedContainerService.HintSize="558.4,275.2" sap2010:WorkflowViewState.IdRef="If_4">
+                        <If.Then>
+                          <Throw DisplayName="Throw" Exception="[New System.Exception(&quot;The form was closed without submitting an order.&quot;)]" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                        </If.Then>
+                      </If>
+                      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="558.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_21">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[ClientName]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[ClientName.Trim]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="558.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_22">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[ClientEmail]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[ClientEmail.Trim]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <If Condition="[Not System.Text.RegularExpressions.Regex.IsMatch(ClientEmail, &quot;^[^@\s]+@[^@\s]+\.[^@\s]+$&quot;)]" DisplayName="If" sap:VirtualizedContainerService.HintSize="558.4,275.2" sap2010:WorkflowViewState.IdRef="If_5">
+                        <If.Then>
+                          <Throw DisplayName="Throw" Exception="[New System.Exception(&quot;The client email address is not valid.&quot;)]" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                        </If.Then>
+                      </If>
+                      <If Condition="[OrderType.StartsWith(&quot;Tailored&quot;)]" DisplayName="If" sap:VirtualizedContainerService.HintSize="558.4,7088.8" sap2010:WorkflowViewState.IdRef="If_7">
+                        <If.Then>
+                          <Sequence DisplayName="Tailored Service" sap:VirtualizedContainerService.HintSize="556.8,2740.8" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each garment row" sap:VirtualizedContainerService.HintSize="523.2,2680.8" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[New Integer() {0, 1, 2, 3}]">
+                              <ui:ForEach.Body>
+                                <ActivityAction x:TypeArguments="x:Int32">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="x:Int32" Name="idx" />
+                                  </ActivityAction.Argument>
+                                  <Sequence DisplayName="Garment row" sap:VirtualizedContainerService.HintSize="484.8,2559.2" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                    <Sequence.Variables>
+                                      <Variable x:TypeArguments="x:String" Name="rowGarment" />
+                                      <Variable x:TypeArguments="x:String" Name="rowFabric" />
+                                      <Variable x:TypeArguments="x:Double" Name="rowYards" />
+                                      <Variable x:TypeArguments="x:Int32" Name="rowPieces" />
+                                    </Sequence.Variables>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_98">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[rowGarment]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[(New String() {Garment1, Garment2, Garment3, Garment4})(idx)]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_99">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[rowFabric]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[(New String() {Fabric1, Fabric2, Fabric3, Fabric4})(idx)]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_100">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Double">[rowYards]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Double">[(New Double() {Yards1, Yards2, Yards3, Yards4})(idx)]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_101">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Int32">[rowPieces]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Int32">[(New Integer() {Pieces1, Pieces2, Pieces3, Pieces4})(idx)]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <If Condition="[Not String.IsNullOrWhiteSpace(rowGarment)]" DisplayName="If garment chosen" sap:VirtualizedContainerService.HintSize="451.2,1801.6" sap2010:WorkflowViewState.IdRef="If_13">
+                                      <If.Then>
+                                        <Sequence DisplayName="Compute garment" sap:VirtualizedContainerService.HintSize="449.6,1648" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <If Condition="[rowYards &lt;= 0]" DisplayName="If" sap:VirtualizedContainerService.HintSize="416,275.2" sap2010:WorkflowViewState.IdRef="If_11">
+                                            <If.Then>
+                                              <Throw DisplayName="Throw" Exception="[New System.Exception(&quot;The fabric length must be greater than 0.&quot;)]" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_7" />
+                                            </If.Then>
+                                          </If>
+                                          <If Condition="[rowPieces &lt; 1]" DisplayName="If" sap:VirtualizedContainerService.HintSize="416,275.2" sap2010:WorkflowViewState.IdRef="If_12">
+                                            <If.Then>
+                                              <Throw DisplayName="Throw" Exception="[New System.Exception(&quot;The number of pieces must be at least 1.&quot;)]" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_8" />
+                                            </If.Then>
+                                          </If>
+                                          <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_102">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:Double">[PricePerYard]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:Double">[CDbl(FabricTable.AsEnumerable().First(Function(r) r("Fabric").ToString = rowFabric)("Price per Yard"))]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_103">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:Double">[FabricCost]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:Double">[Math.Round(PricePerYard * rowYards * rowPieces, 2)]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_104">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:Double">[LaborFee]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:Double">[CDbl(GarmentTable.AsEnumerable().First(Function(r) r("Garment").ToString = rowGarment)("Labor Fee"))]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_105">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[LineRowsHtml]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[LineRowsHtml &amp; "&lt;tr&gt;&lt;td&gt;" &amp; "Fabric: " &amp; System.Net.WebUtility.HtmlEncode(rowFabric) &amp; " (" &amp; System.Net.WebUtility.HtmlEncode(rowGarment) &amp; ")" &amp; "&lt;/td&gt;&lt;td class='r'&gt;" &amp; (rowYards * rowPieces).ToString("0.##") &amp; " yd" &amp; "&lt;/td&gt;&lt;td class='r'&gt;" &amp; PricePerYard.ToString("N2") &amp; "&lt;/td&gt;&lt;td class='r'&gt;" &amp; FabricCost.ToString("N2") &amp; "&lt;/td&gt;&lt;/tr&gt;"]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_106">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[LineRowsHtml]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[LineRowsHtml &amp; "&lt;tr&gt;&lt;td&gt;" &amp; "Tailoring labor - " &amp; System.Net.WebUtility.HtmlEncode(rowGarment) &amp; "&lt;/td&gt;&lt;td class='r'&gt;" &amp; rowPieces.ToString &amp; "&lt;/td&gt;&lt;td class='r'&gt;" &amp; LaborFee.ToString("N2") &amp; "&lt;/td&gt;&lt;td class='r'&gt;" &amp; (LaborFee * rowPieces).ToString("N2") &amp; "&lt;/td&gt;&lt;/tr&gt;"]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="Assign_107">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:Double">[TotalAmount]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:Double">[TotalAmount + FabricCost + Math.Round(LaborFee * rowPieces, 2)]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </Sequence>
+                                      </If.Then>
+                                    </If>
+                                  </Sequence>
+                                </ActivityAction>
+                              </ui:ForEach.Body>
+                            </ui:ForEach>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <If Condition="[OrderType.StartsWith(&quot;Bulk&quot;)]" DisplayName="If" sap:VirtualizedContainerService.HintSize="556.8,4155.2" sap2010:WorkflowViewState.IdRef="If_6">
+                            <If.Then>
+                              <Sequence DisplayName="Bulk Order" sap:VirtualizedContainerService.HintSize="555.2,2248.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="521.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Int32)">[BoysQty]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Int32)">[New Dictionary(Of String, Integer) From {{"XS", Boys_XS}, {"S", Boys_S}, {"M", Boys_M}, {"L", Boys_L}, {"XL", Boys_XL}, {"XXL", Boys_XXL}, {"3XL", Boys_3XL}}]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="521.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Int32)">[GirlsQty]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Int32)">[New Dictionary(Of String, Integer) From {{"XS", Girls_XS}, {"S", Girls_S}, {"M", Girls_M}, {"L", Girls_L}, {"XL", Girls_XL}, {"XXL", Girls_XXL}, {"3XL", Girls_3XL}}]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Gender" sap:VirtualizedContainerService.HintSize="521.6,1840" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[New String() {&quot;Boys&quot;, &quot;Girls&quot;}]">
+                                  <ui:ForEach.Body>
+                                    <ActivityAction x:TypeArguments="x:String">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="x:String" Name="Gender" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="520,1718.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[SizeTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="486.4,1658.4" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                                          <ui:ForEachRow.Body>
+                                            <ActivityAction x:TypeArguments="sd:DataRow">
+                                              <ActivityAction.Argument>
+                                                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                                              </ActivityAction.Argument>
+                                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="484.8,1485.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:String">[SizeName]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:String">[CurrentRow("Size").ToString]</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:Int32">[Quantity]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:Int32">[If(Gender = "Boys", If(BoysQty.ContainsKey(SizeName), BoysQty(SizeName), 0), If(GirlsQty.ContainsKey(SizeName), GirlsQty(SizeName), 0))]</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                                <If Condition="[Quantity &gt; 0]" DisplayName="If" sap:VirtualizedContainerService.HintSize="451.2,1076.8" sap2010:WorkflowViewState.IdRef="If_2">
+                                                  <If.Then>
+                                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,923.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                                        <Assign.To>
+                                                          <OutArgument x:TypeArguments="x:Double">[UnitPrice]</OutArgument>
+                                                        </Assign.To>
+                                                        <Assign.Value>
+                                                          <InArgument x:TypeArguments="x:Double">[CDbl(CurrentRow(Gender))]</InArgument>
+                                                        </Assign.Value>
+                                                      </Assign>
+                                                      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_12">
+                                                        <Assign.To>
+                                                          <OutArgument x:TypeArguments="x:Double">[LineTotal]</OutArgument>
+                                                        </Assign.To>
+                                                        <Assign.Value>
+                                                          <InArgument x:TypeArguments="x:Double">[UnitPrice * Quantity]</InArgument>
+                                                        </Assign.Value>
+                                                      </Assign>
+                                                      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                                        <Assign.To>
+                                                          <OutArgument x:TypeArguments="x:String">[LineRowsHtml]</OutArgument>
+                                                        </Assign.To>
+                                                        <Assign.Value>
+                                                          <InArgument x:TypeArguments="x:String">[LineRowsHtml &amp; "&lt;tr&gt;&lt;td&gt;" &amp; "School uniform (" &amp; Gender &amp; ") - Size " &amp; SizeName &amp; "&lt;/td&gt;&lt;td class='r'&gt;" &amp; Quantity.ToString &amp; "&lt;/td&gt;&lt;td class='r'&gt;" &amp; UnitPrice.ToString("N2") &amp; "&lt;/td&gt;&lt;td class='r'&gt;" &amp; LineTotal.ToString("N2") &amp; "&lt;/td&gt;&lt;/tr&gt;"]</InArgument>
+                                                        </Assign.Value>
+                                                      </Assign>
+                                                      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                                        <Assign.To>
+                                                          <OutArgument x:TypeArguments="x:Double">[TotalAmount]</OutArgument>
+                                                        </Assign.To>
+                                                        <Assign.Value>
+                                                          <InArgument x:TypeArguments="x:Double">[TotalAmount + LineTotal]</InArgument>
+                                                        </Assign.Value>
+                                                      </Assign>
+                                                      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="Assign_15">
+                                                        <Assign.To>
+                                                          <OutArgument x:TypeArguments="x:Int32">[TotalPieces]</OutArgument>
+                                                        </Assign.To>
+                                                        <Assign.Value>
+                                                          <InArgument x:TypeArguments="x:Int32">[TotalPieces + Quantity]</InArgument>
+                                                        </Assign.Value>
+                                                      </Assign>
+                                                    </Sequence>
+                                                  </If.Then>
+                                                </If>
+                                              </Sequence>
+                                            </ActivityAction>
+                                          </ui:ForEachRow.Body>
+                                        </ui:ForEachRow>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ForEach.Body>
+                                </ui:ForEach>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence DisplayName="Alteration" sap:VirtualizedContainerService.HintSize="555.2,1768" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each service row" sap:VirtualizedContainerService.HintSize="521.6,1708" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[New Integer() {0, 1, 2, 3}]">
+                                  <ui:ForEach.Body>
+                                    <ActivityAction x:TypeArguments="x:Int32">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="x:Int32" Name="idx" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Service row" sap:VirtualizedContainerService.HintSize="484.8,1586.4" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                        <Sequence.Variables>
+                                          <Variable x:TypeArguments="x:String" Name="rowService" />
+                                          <Variable x:TypeArguments="x:Int32" Name="rowQty" />
+                                        </Sequence.Variables>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_108">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">[rowService]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">[(New String() {Service1, Service2, Service3, Service4})(idx)]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_109">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:Int32">[rowQty]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:Int32">[(New Integer() {ServiceQty1, ServiceQty2, ServiceQty3, ServiceQty4})(idx)]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <If Condition="[Not String.IsNullOrWhiteSpace(rowService)]" DisplayName="If service chosen" sap:VirtualizedContainerService.HintSize="451.2,1177.6" sap2010:WorkflowViewState.IdRef="If_15">
+                                          <If.Then>
+                                            <Sequence DisplayName="Compute service" sap:VirtualizedContainerService.HintSize="449.6,1024" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <If Condition="[rowQty &lt; 1]" DisplayName="If" sap:VirtualizedContainerService.HintSize="416,275.2" sap2010:WorkflowViewState.IdRef="If_14">
+                                                <If.Then>
+                                                  <Throw DisplayName="Throw" Exception="[New System.Exception(&quot;The number of pieces must be at least 1.&quot;)]" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_9" />
+                                                </If.Then>
+                                              </If>
+                                              <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_110">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:Double">[UnitPrice]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:Double">[CDbl(ServiceTable.AsEnumerable().First(Function(r) r("Service").ToString = rowService)("Price"))]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_111">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:Double">[LineTotal]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:Double">[UnitPrice * rowQty]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_112">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[LineRowsHtml]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">[LineRowsHtml &amp; "&lt;tr&gt;&lt;td&gt;" &amp; "Alteration: " &amp; System.Net.WebUtility.HtmlEncode(rowService) &amp; "&lt;/td&gt;&lt;td class='r'&gt;" &amp; rowQty.ToString &amp; "&lt;/td&gt;&lt;td class='r'&gt;" &amp; UnitPrice.ToString("N2") &amp; "&lt;/td&gt;&lt;td class='r'&gt;" &amp; LineTotal.ToString("N2") &amp; "&lt;/td&gt;&lt;/tr&gt;"]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="Assign_113">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:Double">[TotalAmount]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:Double">[TotalAmount + LineTotal]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                            </Sequence>
+                                          </If.Then>
+                                        </If>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ForEach.Body>
+                                </ui:ForEach>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                        </If.Else>
+                      </If>
+                      <If Condition="[TotalAmount &lt;= 0]" DisplayName="If" sap:VirtualizedContainerService.HintSize="558.4,275.2" sap2010:WorkflowViewState.IdRef="If_8">
+                        <If.Then>
+                          <Throw DisplayName="Throw" Exception="[New System.Exception(&quot;No items were ordered, so there is nothing to invoice.&quot;)]" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                        </If.Then>
+                      </If>
+                      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="558.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_23">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[InvoiceDate]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[Now.ToString("yyyy-MM-dd")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="558.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_24">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DueDate]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[Now.AddDays(DueDays).ToString("yyyy-MM-dd")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="558.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_25">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[InvoiceHtml]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">["&lt;html&gt;&lt;head&gt;&lt;meta charset='utf-8'&gt;&lt;style&gt;body{font-family:Arial,sans-serif;color:#222;padding:40px;font-size:13px} h1{margin:0;color:#004aad} .muted{color:#666} table{width:100%;border-collapse:collapse;margin-top:20px} th{background:#004aad;color:#fff;text-align:left;padding:8px} td{padding:8px;border-bottom:1px solid #ddd} .r{text-align:right} .total td{font-weight:bold;font-size:15px;border-top:2px solid #333}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;" &amp; "&lt;table style='margin-top:0'&gt;&lt;tr&gt;&lt;td style='width:110px;border:none;padding-left:0'&gt;&lt;img style='height:100px;width:100px' src='data:image/png;base64," &amp; Convert.ToBase64String(System.IO.File.ReadAllBytes(System.IO.Path.GetFullPath("logo.png"))) &amp; "'&gt;&lt;/td&gt;&lt;td style='border:none'&gt;&lt;h1&gt;Marshall's Tailoring&lt;/h1&gt;&lt;div class='muted'&gt;2nd Floor, Bldg. 1, Lipa City Public Market, Lipa City, Batangas&lt;br&gt;0945 273 1100 | 0939 740 1011 | marshalls.tailoring@gmail.com&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;h2&gt;INVOICE&lt;/h2&gt;&lt;table style='margin-top:0'&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Invoice No.:&lt;/b&gt; " &amp; InvoiceNo &amp; "&lt;br&gt;&lt;b&gt;Date:&lt;/b&gt; " &amp; InvoiceDate &amp; "&lt;br&gt;&lt;b&gt;Due Date:&lt;/b&gt; " &amp; DueDate &amp; "&lt;/td&gt;&lt;td&gt;&lt;b&gt;Bill To:&lt;/b&gt;&lt;br&gt;" &amp; System.Net.WebUtility.HtmlEncode(ClientName) &amp; "&lt;br&gt;" &amp; System.Net.WebUtility.HtmlEncode(ClientEmail) &amp; "&lt;br&gt;&lt;b&gt;Order Type:&lt;/b&gt; " &amp; System.Net.WebUtility.HtmlEncode(OrderType) &amp; "&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" &amp; "&lt;table&gt;&lt;tr&gt;&lt;th&gt;Description&lt;/th&gt;&lt;th class='r'&gt;Qty&lt;/th&gt;&lt;th class='r'&gt;Unit Price (PHP)&lt;/th&gt;&lt;th class='r'&gt;Amount (PHP)&lt;/th&gt;&lt;/tr&gt;" &amp; LineRowsHtml &amp; "&lt;tr class='total'&gt;&lt;td colspan='3' class='r'&gt;TOTAL AMOUNT DUE (Non-VAT)&lt;/td&gt;&lt;td class='r'&gt;PHP " &amp; TotalAmount.ToString("N2") &amp; "&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;Payment:&lt;/b&gt; GCash " &amp; System.Net.WebUtility.HtmlEncode(GCashNumber) &amp; " (" &amp; System.Net.WebUtility.HtmlEncode(GCashName) &amp; ")&lt;br&gt;&lt;b&gt;Terms:&lt;/b&gt; Payable within " &amp; DueDays.ToString &amp; " days of the invoice date.&lt;/p&gt;&lt;p class='muted'&gt;Thank you for your business!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="558.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_26">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[InvoiceFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.GetFullPath("Invoices")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="558.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_27">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[PdfFileName]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">["Invoice_" &amp; InvoiceNo &amp; "_" &amp; System.Text.RegularExpressions.Regex.Replace(ClientName, "[^A-Za-z0-9]+", "_") &amp; ".pdf"]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="558.4,167.2" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="CreateDirectory" TargetType="si:Directory">
+                        <InArgument x:TypeArguments="x:String">[InvoiceFolder]</InArgument>
+                      </InvokeMethod>
+                      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="558.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_28">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[PdfPath]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(InvoiceFolder, PdfFileName)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <upapn:ConvertHtmlToPDF FileName="{x:Null}" FooterFileName="{x:Null}" FooterHtml="{x:Null}" FooterResourceFile="{x:Null}" HeaderFileName="{x:Null}" HeaderHtml="{x:Null}" HeaderResourceFile="{x:Null}" Margin="{x:Null}" OutputFile="{x:Null}" ResourceFile="{x:Null}" DisplayName="Convert HTML to PDF" FooterInputMode="Content" HeaderInputMode="Content" sap:VirtualizedContainerService.HintSize="558.4,112.8" Html="[InvoiceHtml]" sap2010:WorkflowViewState.IdRef="ConvertHtmlToPDF_1" InputMode="Content" KeepBackground="True" OutputFileName="[PdfPath]" PaperSize="A4" Scale="1">
+                        <upapn:ConvertHtmlToPDF.FooterItem>
+                          <upap:ItemArgument x:TypeArguments="upr:IResource" FileName="{x:Null}" ResourceFile="{x:Null}" />
+                        </upapn:ConvertHtmlToPDF.FooterItem>
+                        <upapn:ConvertHtmlToPDF.HeaderItem>
+                          <upap:ItemArgument x:TypeArguments="upr:IResource" FileName="{x:Null}" ResourceFile="{x:Null}" />
+                        </upapn:ConvertHtmlToPDF.HeaderItem>
+                        <upapn:ConvertHtmlToPDF.Item>
+                          <upap:ItemArgument x:TypeArguments="upr:IResource" FileName="{x:Null}" ResourceFile="{x:Null}" />
+                        </upapn:ConvertHtmlToPDF.Item>
+                      </upapn:ConvertHtmlToPDF>
+                      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="558.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_29">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[MailBody]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">["Good day " &amp; ClientName &amp; "," &amp; vbNewLine &amp; vbNewLine &amp; "Thank you for choosing Marshall's Tailoring. Please find attached invoice " &amp; InvoiceNo &amp; " for a total of PHP " &amp; TotalAmount.ToString("N2") &amp; ", due on " &amp; DueDate &amp; "." &amp; vbNewLine &amp; vbNewLine &amp; "Payment may be made via GCash to " &amp; GCashNumber &amp; " (" &amp; GCashName &amp; ")." &amp; vbNewLine &amp; vbNewLine &amp; "Marshall's Tailoring" &amp; vbNewLine &amp; "0945 273 1100 | 0939 740 1011"]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="558.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_30">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[Attempts]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="558.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_31">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Boolean">[Sent]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[Not Sent AndAlso Attempts &lt; 3]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="558.4,1643.2" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                        <ui:InterruptibleDoWhile.Body>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="484.8,1512.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="451.2,1452.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                              <TryCatch.Try>
+                                <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="449.6,556" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:SendMail Action="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" ResourceAttachmentList="{x:Null}" ResourceAttachments="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" AttachmentInputMode="FilePathsBuilder" Body="[MailBody]" ConnectionMode="LegacyConfiguration" CreatedAfterSolutionSupport="False" DisplayName="Send SMTP Mail Message" Email="alejandro_umila@dlsl.edu.ph" EnableSSL="True" From="alejandro_umila@dlsl.edu.ph" sap:VirtualizedContainerService.HintSize="416,330.4" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Name="Marshall's Tailoring" Password="[EmailPassword]" Port="587" SecureConnection="StartTls" Server="smtp.gmail.com" Subject="[&quot;Invoice &quot; &amp; InvoiceNo &amp; &quot; from Marshall's Tailoring&quot;]" To="[ClientEmail]" UseISConnection="False" UseRichTextEditor="True">
+                                    <ui:SendMail.AttachmentsBackup>
+                                      <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="FilePathsBuilder">
+                                        <usau:BackupSlot.BackupValues>
+                                          <scg:Dictionary x:TypeArguments="umame:AttachmentInputMode, scg:List(x:Object)" />
+                                        </usau:BackupSlot.BackupValues>
+                                      </usau:BackupSlot>
+                                    </ui:SendMail.AttachmentsBackup>
+                                    <ui:SendMail.ConnectionDetailsBackupSlot>
+                                      <usau:BackupSlot x:TypeArguments="umae:ConnectionDetails" StoredValue="LegacyConfiguration">
+                                        <usau:BackupSlot.BackupValues>
+                                          <scg:Dictionary x:TypeArguments="umae:ConnectionDetails, scg:List(x:Object)" />
+                                        </usau:BackupSlot.BackupValues>
+                                      </usau:BackupSlot>
+                                    </ui:SendMail.ConnectionDetailsBackupSlot>
+                                    <ui:SendMail.Files>
+                                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="1">
+                                        <InArgument x:TypeArguments="x:String">[PdfPath]</InArgument>
+                                      </scg:List>
+                                    </ui:SendMail.Files>
+                                  </ui:SendMail>
+                                  <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="Assign_32">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Boolean">[Sent]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </Sequence>
+                              </TryCatch.Try>
+                              <TryCatch.Catches>
+                                <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                                  <ActivityAction x:TypeArguments="s:Exception">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                    </ActivityAction.Argument>
+                                    <Sequence DisplayName="Catch" sap:VirtualizedContainerService.HintSize="449.6,675.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_33">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Int32">[Attempts]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Int32">[Attempts + 1]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_34">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:String">[Remarks]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:String">[exception.Message]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <If Condition="[Attempts &lt; 3]" DisplayName="If" sap:VirtualizedContainerService.HintSize="416,266.4" sap2010:WorkflowViewState.IdRef="If_9">
+                                        <If.Then>
+                                          <Delay DisplayName="Delay" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                                        </If.Then>
+                                      </If>
+                                    </Sequence>
+                                  </ActivityAction>
+                                </Catch>
+                              </TryCatch.Catches>
+                            </TryCatch>
+                          </Sequence>
+                        </ui:InterruptibleDoWhile.Body>
+                      </ui:InterruptibleDoWhile>
+                      <If Condition="[Not Sent]" DisplayName="If" sap:VirtualizedContainerService.HintSize="558.4,275.2" sap2010:WorkflowViewState.IdRef="If_10">
+                        <If.Then>
+                          <Throw DisplayName="Throw" Exception="[New System.Exception(&quot;Email could not be sent after 3 attempts: &quot; &amp; Remarks)]" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_6" />
+                        </If.Then>
+                      </If>
+                      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="558.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_35">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[Status]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">["Sent"]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="558.4,165.6" sap2010:WorkflowViewState.IdRef="Assign_36">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[Remarks]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </TryCatch.Try>
+                  <TryCatch.Catches>
+                    <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                      <ActivityAction x:TypeArguments="s:Exception">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Catch" sap:VirtualizedContainerService.HintSize="592,400" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="558.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_37">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[Remarks]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[exception.Message]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="558.4,165.6" sap2010:WorkflowViewState.IdRef="Assign_38">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[Status]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">["Failed"]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </ActivityAction>
+                    </Catch>
+                  </TryCatch.Catches>
+                </TryCatch>
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_72">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="sd:DataTable">[LogTable]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="sd:DataTable">[New System.Data.DataTable()]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="[&quot;Invoice No.&quot;]" DataTable="[LogTable]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="593.6,220" sap2010:WorkflowViewState.IdRef="AddDataColumn_1" />
+                <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="[&quot;Date&quot;]" DataTable="[LogTable]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="593.6,220" sap2010:WorkflowViewState.IdRef="AddDataColumn_2" />
+                <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="[&quot;Client Name&quot;]" DataTable="[LogTable]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="593.6,220" sap2010:WorkflowViewState.IdRef="AddDataColumn_3" />
+                <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="[&quot;Client Email&quot;]" DataTable="[LogTable]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="593.6,220" sap2010:WorkflowViewState.IdRef="AddDataColumn_4" />
+                <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="[&quot;Order Type&quot;]" DataTable="[LogTable]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="593.6,220" sap2010:WorkflowViewState.IdRef="AddDataColumn_5" />
+                <ui:AddDataColumn x:TypeArguments="x:Double" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="[&quot;Total Amount&quot;]" DataTable="[LogTable]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="593.6,220" sap2010:WorkflowViewState.IdRef="AddDataColumn_6" />
+                <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="[&quot;PDF File Name&quot;]" DataTable="[LogTable]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="593.6,220" sap2010:WorkflowViewState.IdRef="AddDataColumn_7" />
+                <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="[&quot;Status&quot;]" DataTable="[LogTable]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="593.6,220" sap2010:WorkflowViewState.IdRef="AddDataColumn_8" />
+                <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="[&quot;Remarks&quot;]" DataTable="[LogTable]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="593.6,220" sap2010:WorkflowViewState.IdRef="AddDataColumn_9" />
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[New Object() {InvoiceNo, Now.ToString(&quot;yyyy-MM-dd HH:mm&quot;), ClientName, ClientEmail, OrderType, TotalAmount, PdfFileName, Status, Remarks}]" DataTable="[LogTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="593.6,220" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="593.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_73">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Object">[SettingsTable.Rows(0)("Value")]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Object">[NextNumber + 1]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="593.6,850.4" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
+                  <ueab:ExcelProcessScopeX.Body>
+                    <ActivityAction x:TypeArguments="ui:IExcelProcess">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484.8,772" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="451.2,712" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" WorkbookPath="MarshallsTailoring.xlsx">
+                          <ueab:ExcelApplicationCard.Body>
+                            <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="449.6,492.8" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ueab:WriteRangeX Append="True" Destination="[Excel.Sheet(&quot;Invoice Log&quot;)]" DisplayName="Write Range" ExcludeHeaders="True" sap:VirtualizedContainerService.HintSize="416,220.8" sap2010:WorkflowViewState.IdRef="WriteRangeX_1" IgnoreEmptySource="False" Source="[LogTable]" />
+                                <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Settings&quot;)]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="416,212" sap2010:WorkflowViewState.IdRef="WriteRangeX_2" IgnoreEmptySource="False" Source="[SettingsTable]" />
+                              </Sequence>
+                            </ActivityAction>
+                          </ueab:ExcelApplicationCard.Body>
+                        </ueab:ExcelApplicationCard>
+                      </Sequence>
+                    </ActivityAction>
+                  </ueab:ExcelProcessScopeX.Body>
+                </ueab:ExcelProcessScopeX>
+                <ui:MessageBox ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Caption="Invoice result" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="593.6,122.4" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[If(Status = &quot;Sent&quot;, &quot;Invoice &quot; &amp; InvoiceNo &amp; &quot; was sent to &quot; &amp; ClientEmail &amp; &quot;.&quot;, &quot;Invoice &quot; &amp; InvoiceNo &amp; &quot; FAILED: &quot; &amp; Remarks)]" />
+                <ui:InputDialog OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="593.6,318.4" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="[&quot;Create another invoice?&quot;]" Options="[New String() {&quot;Yes&quot;, &quot;No&quot;}]" Title="[&quot;Marshall's Tailoring&quot;]" TopMost="False">
+                  <ui:InputDialog.Result>
+                    <OutArgument x:TypeArguments="x:String">[AnotherInvoice]</OutArgument>
+                  </ui:InputDialog.Result>
+                </ui:InputDialog>
+              </Sequence>
+            </ui:InterruptibleDoWhile.Body>
+          </ui:InterruptibleDoWhile>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Catch" sap:VirtualizedContainerService.HintSize="662.4,173.6" sap2010:WorkflowViewState.IdRef="Sequence_20">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:MessageBox ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Caption="Marshall's Tailoring" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="628.8,113.6" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;The process stopped: &quot; &amp; exception.Message]" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>
